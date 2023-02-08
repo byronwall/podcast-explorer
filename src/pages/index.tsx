@@ -53,30 +53,33 @@ const Home: NextPage = () => {
           <h2 className="text-3xl font-bold text-white">recent favorites</h2>
           <div className="flex flex-col gap-2">
             {feeds.map((feed) => (
-              <div key={feed.url} className="flex border border-white p-2">
+              <div
+                key={feed.url}
+                className="flex flex-col border border-white p-2"
+              >
                 <Link
                   href={`${feed.url}`}
                   className="text-white"
                   target={"_blank"}
                 >
                   {feed.title}
-                  <div className="flex gap-2">
-                    {feed.outline
-                      .filter((c) => c.$.userRecommendedDate)
-                      .slice(0, 3)
-                      .map((outline, idx) => (
-                        <div key={idx}>
-                          <Link
-                            href={`${outline.$.url}`}
-                            className="text-white"
-                            target={"_blank"}
-                          >
-                            {outline.$.title}
-                          </Link>
-                        </div>
-                      ))}
-                  </div>
                 </Link>
+                <div className="flex gap-2">
+                  {feed.outline
+                    .filter((c) => c.$.userRecommendedDate)
+                    .slice(0, 3)
+                    .map((outline, idx) => (
+                      <div key={idx}>
+                        <Link
+                          href={`${outline.$.overcastUrl}`}
+                          className="text-white"
+                          target={"_blank"}
+                        >
+                          {outline.$.title}
+                        </Link>
+                      </div>
+                    ))}
+                </div>
               </div>
             ))}
           </div>
