@@ -35,7 +35,7 @@ const Home: NextPage = () => {
       });
     }
 
-    getData();
+    void getData();
   }, []);
 
   return (
