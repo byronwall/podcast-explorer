@@ -42,7 +42,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Podcast Explorer</title>
+        <title>Podcast Explorer Demo for Jacob</title>
         <meta name="description" content="Recent favorite podcasts" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
